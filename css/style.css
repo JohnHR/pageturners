@@ -1,0 +1,19 @@
+body {
+	font-size: 24px;
+}
+
+div {
+	color: red;
+}
+
+button {
+	width: 200px;
+	height: 100px;
+	font-size: 16px;
+}
+
+.circle {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
