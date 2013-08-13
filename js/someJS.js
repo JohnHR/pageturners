@@ -16,6 +16,7 @@ var book = {
   excerpt: 'Im blue lah bah dee lah bah dah, lah bah dee lah bah dai, lah bah dee lah bah dai...',
   lookupBuyingWebsites: function() { console.log('ohai i found an amazon link');}
 };
+var book1 = new Book(321423, 'A Tale of 2 Cities', "Bob Kraut");
 
 var user = {
   id: 123,
@@ -27,6 +28,35 @@ var user = {
   ignoredBooks: [546245, 23425],
   purchasedBooks: []
 };
+
+
+//constructor
+function Book(id, title, author){
+	this.id = id || 8675309;
+	this.title = title || "50 Shades of Grey";
+	this.author = author || "Mark Zuckerberg";
+	// this.breakBinding = function() {
+	// 	console.log("own stuff gets done");
+	// }
+}
+
+
+
+
+
+//prototypes
+Book.prototype.breakBinding = function() {
+	console.log("proto stuff gets done");
+}
+Book.prototype.author = "Santa Claus";
+
+
+
+
+
+
+
+
 
 // api call
 
