@@ -60,8 +60,10 @@ Book.prototype.author = "Santa Claus";
 
 // api call
 
-var url1 = 'http://api.harpercollins.com/api/v2/hcapim?apiname=ProductInfo&format=XML&param3=';
+var url1 = 'http://api.harpercollins.com/api/v3/hcapim?apiname=ProductInfo&format=XML&isbn=';
 var url2 = '&apikey=yjhac55fhkd2vhe2u5gnz3rc';
+var fUrl = "http://api.harpercollins.com/api/v3/hcapim?apiname=ProductInfo&format=XML&isbn=9780064410304&apikey=yjhac55fhkd2vhe2u5gnz3rc";
+var fUrl2 = "http://api.harpercollins.com/api/v3/hcapim?apiname=catalog&format=JSON&title=American&apikey=yjhac55fhkd2vhe2u5gnz3rc";
 
 // example: helWor("The Old Man and")
 function getByTitle(title) {
@@ -76,8 +78,8 @@ function getByTitle(title) {
     // We faced this is CPMWA a bunch because Chrome is a tight-fisted punk, but it usually worked to run it from
     //	a web server.  That's not working now, and I'm tapped out for the night.
     headers: {
-      "X-Requested-With": "XMLHttpRequest",
-      "X-Originating-Ip": "127.0.0.1:8000"
+       "X-Requested-With": "XMLHttpRequest",
+       "X-Originating-Ip": "127.0.0.1:8000"
     },
     success: function (data) {
       console.log("Data: " + data);
