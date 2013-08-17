@@ -68,6 +68,14 @@ input {
 /* Any mobile-specific styles go in this block. */
 @media (max-width: 600px) {
   
+	body {
+		background: #8888aa;
+	}
+
+	div {
+		color: red;
+	}
+
 	.screen {
 		display: block;
 	}
