@@ -3,6 +3,8 @@
 
 // data structures
 
+var data1;
+
 var book = {
   id: 321423,
   title: 'A Tale of Two Cities',
@@ -78,7 +80,12 @@ function getByTitle(title) {
     success: function (data) {
       console.log("AJAX load successful.  Returning all books with 'American' in title, in JSON format.");
       console.log(data);
-      //$('#data').html(data);
+
+      $('#screen1 .body #data').html("AJAX load successful.  Dispalying all books with 'American' in title, in JSON format, on screen 3.");
+      data1 = data;
+      for (var i = 0; i < data.Product_Group.length; i++) {
+        $('#screen3 .body').append( "Title " + (i+1) + ": " + data.Product_Group[i].Product_Group_Title + "<br>");
+      }
     }
   });
 }
@@ -86,10 +93,12 @@ function getByTitle(title) {
 function basicGet() {
   console.log("getting with an HTTP request...");
   $.get(fUrl, function(data) {
-    //$('.result').html(data);
     console.log('HTTP load was performed. Returning book with ISBN 9780064410304, in XML format.');
     console.log(data);
-    //$('#data').html(data);
+    data1 = data;
+    
+    $('#screen1 .body #data').html("HTTP load was performed. Displaying book with ISBN 9780064410304, in XML format, on screen 4.");
+    $('#screen4 .body').html( data1.documentElement );
   });
 }
 
@@ -98,6 +107,9 @@ $(document).ready(function(){
 	//$('#messageWrapper').html('more text! in red!');
   $('#ajax').click( getByTitle );
   $('#http').click( basicGet );
+  $('#addText').click( function () {
+    $('#screen2 .body').html( $('input').val() || "default text added (try putting something in the input box next time!)" );
+  });
 });
 
 

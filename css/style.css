@@ -1,6 +1,8 @@
 body {
 	font-size: 24px;
+	font-family: 'Oswald', sans-serif;
 	margin: 20px;
+	background: #AAA;
 }
 
 div {
@@ -8,19 +10,51 @@ div {
 }
 
 .screen {
-	padding: 10px;
+	padding: 0px;
+	margin-bottom: 20px;
 	width: 480px;
 	height: 800px;
 	border: 1px solid black;
 	display: inline-block;
 	vertical-align: top;
+	background: #EEE;
 }
+
+.header {
+	text-align: center;
+	padding: 10px;
+	border-bottom: 1px solid black;
+	height: 5%;
+}
+
+.body {
+	padding: 10px;
+	height: 80%;
+	overflow: scroll;
+}
+
+.footer {
+	padding: 10px;
+	border-top: 1px solid black;
+	vertical-align: bottom;
+	height: 5%;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 button {
 	width: 100px;
 	height: 50px;
 	font-size: 16px;
 	border-radius: 5px;
+	margin: 0 10px 10px 0;
+}
+
+input {
+	width: 200px;
+	height: 35px;
+	font-size: 16px;
+	margin: 0 10px 10px 0;
 }
 
 .circle {
@@ -29,10 +63,13 @@ button {
 	border-radius: 50px;
 }
 
+
+
+/* Any mobile-specific styles go in this block. */
 @media (max-width: 600px) {
   
-  .screen {
-    display: block;
-  }
+	.screen {
+		display: block;
+	}
 
 }

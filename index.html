@@ -3,18 +3,37 @@
 	<head>
 		<link href="css/reset.css" rel="stylesheet" type="text/css">
 		<link href="css/style.css" rel="stylesheet" type="text/css">
+		<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 		<script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
 		<script src="js/someJS.js" type="text/javascript"></script>
 		<title>Page Turners</title>
 	</head>
 	<body>
 		<div class="screen" id="screen1">
-			<!--<h1>Hello, world.  If js is working, there will be more text below.  If CSS is working, it will be red.</h1>-->
-			Screen 1
-			<div id="messageWrapper"></div>
-			<button id="ajax">AJAX get</button><button id="http">HTTP get</button>
-			<div id="data"></div>
+			<div class="header">Screen 1</div>
+			<div class="body">
+				<div id="messageWrapper"></div>
+				<button id="ajax">AJAX get</button><button id="http">HTTP get</button>
+				<div id="data"></div>
+				<input type="text" placeholder="text to add to screen 2"><br>
+				<button id="addText">Add text</button>
+			</div>
+			<div class="footer"></div>
 		</div>
-		<div class="screen" id="screen2">Screen 2</div>
+		<div class="screen" id="screen2">
+			<div class="header">Screen 2</div>
+			<div class="body"></div>
+			<div class="footer"></div>
+		</div>
+		<div class="screen" id="screen3">
+			<div class="header">Screen 3</div>
+			<div class="body"></div>
+			<div class="footer"></div>
+		</div>
+		<div class="screen" id="screen4">
+			<div class="header">Screen 4</div>
+			<div class="body"></div>
+			<div class="footer"></div>
+		</div>
 	</body>
 </html>
