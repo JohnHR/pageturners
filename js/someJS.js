@@ -71,10 +71,10 @@ function getByTitle(title) {
   $.ajax({
     type: "get",
     url: fUrl2,
-    headers: {
-       "X-Requested-With": "XMLHttpRequest",
-       "X-Originating-Ip": "127.0.0.1:8000"
-    },
+    // headers: {
+    //    "X-Requested-With": "XMLHttpRequest",
+    //    "X-Originating-Ip": "127.0.0.1:8000"
+    // },
     success: function (data) {
       console.log("AJAX load successful.  Returning all books with 'American' in title, in JSON format.");
       console.log(data);
@@ -95,7 +95,7 @@ function basicGet() {
 
 $(document).ready(function(){
 	console.log("Dummy js working.");
-	$('#messageWrapper').html('more text! in red!');
+	//$('#messageWrapper').html('more text! in red!');
   $('#ajax').click( getByTitle );
   $('#http').click( basicGet );
 });
