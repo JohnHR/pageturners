@@ -1,64 +1,7 @@
 // Page Turner app, initial js file
 // 8/10/13
 
-// data structures
-
-var data1;
-
-var book = {
-  id: 321423,
-  title: 'A Tale of Two Cities',
-  author: 'Charles Dickens',
-  genres: ['horror', 'humor', 'self-help'],
-  year: 1859,
-  synopsis: 'I am a cool description',
-  reviews: ['this book is the best', 'this was better than the sequel'],
-  cover: '/img/covers/321423.png',
-  quote: 'It was the best of times, it was the worst of times...',
-  excerpt: 'Im blue lah bah dee lah bah dah, lah bah dee lah bah dai, lah bah dee lah bah dai...',
-  lookupBuyingWebsites: function() { console.log('ohai i found an amazon link');}
-};
-var book1 = new Book(321423, 'A Tale of 2 Cities', "Bob Kraut");
-
-var user = {
-  id: 123,
-  name: 'Ishmael',
-  revealsRemaining: 1,
-  savedGenres: ['adventure', 'marine biology'],
-  savedBooks: [321423, 1234123, 1234214], // max of 3
-  discardedBooks: [456, 2495820, 2134123, 134123, 132412],
-  ignoredBooks: [546245, 23425],
-  purchasedBooks: []
-};
-
-
-//constructor
-function Book(id, title, author){
-	this.id = id || 8675309;
-	this.title = title || "50 Shades of Grey";
-	this.author = author || "Mark Zuckerberg";
-	// this.breakBinding = function() {
-	// 	console.log("own stuff gets done");
-	// }
-}
-
-
-
-
-
-//prototypes
-Book.prototype.breakBinding = function() {
-	console.log("proto stuff gets done");
-}
-Book.prototype.author = "Santa Claus";
-
-
-
-
-
-
-
-
+var carouselVals = ["left", "center", "right", "back"];
 
 // api call
 
@@ -110,6 +53,43 @@ $(document).ready(function(){
   $('#addText').click( function () {
     $('#screen2 .body').html( $('input').val() || "default text added (try putting something in the input box next time!)" );
   });
+
+  $('#carousel-left').html(carouselVals[0]);
+  $('#carousel-center').html(carouselVals[1]);
+  $('#carousel-center').data("index", 1);
+  $('#carousel-right').html(carouselVals[2]);
+
+  $('#carousel-center').click( function () {
+    var index = $('#carousel-center').data("index")
+  
+    if (index < carouselVals.length - 2) {
+      console.log("case 1");
+      $('#carousel-left').html(carouselVals[index]);
+      $('#carousel-center').html(carouselVals[index + 1]);
+      $('#carousel-right').html(carouselVals[index + 2]);
+
+      $('#carousel-center').data("index", index + 1);
+    } else if (index == carouselVals.length - 2) {
+      console.log("case 2");
+      $('#carousel-left').html(carouselVals[index]);
+      $('#carousel-center').html(carouselVals[index + 1]);
+      $('#carousel-right').html(carouselVals[0]);
+
+      $('#carousel-center').data("index", index + 1);
+
+    } else if (index == carouselVals.length - 1) {
+      console.log("case 3");
+      $('#carousel-left').html(carouselVals[index]);
+      $('#carousel-center').html(carouselVals[0]);
+      $('#carousel-right').html(carouselVals[1]);
+
+      $('#carousel-center').data("index", 0);
+
+    } else {
+      alert("um....whoops?");
+    }
+  });
+
 });
 
 
@@ -119,6 +99,56 @@ $(document).ready(function(){
 
 
 
+// data structures
+
+var data1;
+
+var book = {
+  id: 321423,
+  title: 'A Tale of Two Cities',
+  author: 'Charles Dickens',
+  genres: ['horror', 'humor', 'self-help'],
+  year: 1859,
+  synopsis: 'I am a cool description',
+  reviews: ['this book is the best', 'this was better than the sequel'],
+  cover: '/img/covers/321423.png',
+  quote: 'It was the best of times, it was the worst of times...',
+  excerpt: 'Im blue lah bah dee lah bah dah, lah bah dee lah bah dai, lah bah dee lah bah dai...',
+  lookupBuyingWebsites: function() { console.log('ohai i found an amazon link');}
+};
+var book1 = new Book(321423, 'A Tale of 2 Cities', "Bob Kraut");
+
+var user = {
+  id: 123,
+  name: 'Ishmael',
+  revealsRemaining: 1,
+  savedGenres: ['adventure', 'marine biology'],
+  savedBooks: [321423, 1234123, 1234214], // max of 3
+  discardedBooks: [456, 2495820, 2134123, 134123, 132412],
+  ignoredBooks: [546245, 23425],
+  purchasedBooks: []
+};
+
+
+//constructor
+function Book(id, title, author){
+  this.id = id || 8675309;
+  this.title = title || "50 Shades of Grey";
+  this.author = author || "Mark Zuckerberg";
+  // this.breakBinding = function() {
+  //  console.log("own stuff gets done");
+  // }
+}
+
+
+
+
+
+//prototypes
+Book.prototype.breakBinding = function() {
+  console.log("proto stuff gets done");
+}
+Book.prototype.author = "Santa Claus";
 
 
 

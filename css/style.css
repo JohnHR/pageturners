@@ -28,9 +28,10 @@ div {
 }
 
 .body {
-	padding: 10px;
+	/*padding: 10px;*/
 	height: 80%;
-	overflow: scroll;
+	width: 100%;
+	/*overflow: scroll;*/
 }
 
 .footer {
@@ -38,6 +39,51 @@ div {
 	border-top: 1px solid black;
 	vertical-align: bottom;
 	height: 5%;
+}
+
+#carousel {
+	color: green;
+	height: 79%;
+	text-align: center;
+	margin: 5px;
+}
+
+.carousel-slot {
+	display: inline-block;
+	height: 95%;
+	border: 1px solid black;
+	background-color: white;
+	overflow: hidden;
+}
+
+#carousel-left {
+	width: 10%;
+	float: left;
+}
+
+#carousel-center {
+	width: 50%;
+}
+
+#carousel-right {
+	width: 10%;
+	float:right;
+}
+
+#holster {
+	color: gray;
+	vertical-align: bottom;
+	height: 19%;
+	border-top: 1px solid black;
+	padding: 5px;
+}
+
+.slot {
+	display: inline-block;
+	width: 31%;
+	height: 95%;
+	border: 1px solid black;
+	background-color: white;
 }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
